@@ -1,46 +1,34 @@
 /* ==========================================================================
    SYSTEMS & ARCHITECTURE PORTFOLIO
    Design System: Anti-AI Slop / High-Precision Enterprise
-   Updated: Proper animation, Inter font, differentiated components
    ========================================================================== */
 
-/* Import Inter — sharper, more legible than system stack at all weights */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* ============================================================
-   DESIGN TOKENS
-   ============================================================ */
 :root {
-  /* Backgrounds — warm-tinted dark, not cold blue-gray */
   --bg-main:          #09090b;
   --bg-surface:       #111113;
   --bg-surface-2:     #18181b;
   --bg-overlay:       rgba(9, 9, 11, 0.88);
 
-  /* Borders */
   --border-muted:     #27272a;
   --border-subtle:    #3f3f46;
   --border-focus:     #6366f1;
 
-  /* Text */
   --text-primary:     #fafafa;
   --text-secondary:   #a1a1aa;
   --text-muted:       #71717a;
 
-  /* Accent — single primary accent, used sparingly */
-  --accent:           #818cf8;   /* indigo-400 — readable on dark, not neon */
+  --accent:           #818cf8;
   --accent-dim:       rgba(129, 140, 248, 0.12);
   --accent-border:    rgba(129, 140, 248, 0.25);
 
-  /* Semantic colors — only for status indicators */
-  --status-live:      #34d399;   /* emerald — "live product" dots */
-  --status-danger:    #f87171;   /* red — trigger block */
+  --status-live:      #34d399;
+  --status-danger:    #f87171;
 
-  /* Typography */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Spacing Rhythm — strict 4px base */
   --sp-1:  4px;
   --sp-2:  8px;
   --sp-3:  12px;
@@ -52,22 +40,16 @@
   --sp-12: 48px;
   --sp-16: 64px;
 
-  /* Easing */
   --ease-apple:  cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-linear: linear;
   --dur-fast:    120ms;
   --dur-normal:  220ms;
   --dur-slow:    380ms;
 
-  /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
 }
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -82,7 +64,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11"; /* Inter optical features */
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   background-color: var(--bg-main);
   color: var(--text-primary);
   line-height: 1.6;
@@ -92,18 +74,12 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================================
-   LAYOUT
-   ============================================================ */
 .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 var(--sp-6);
 }
 
-/* ============================================================
-   HEADER & NAV
-   ============================================================ */
 header {
   position: sticky;
   top: 0;
@@ -129,7 +105,6 @@ header {
   gap: var(--sp-2);
 }
 
-/* Live status indicator dot — only green dot has meaning (live system) */
 .logo::before {
   content: "";
   display: inline-block;
@@ -137,7 +112,6 @@ header {
   height: 7px;
   background-color: var(--status-live);
   border-radius: 50%;
-  /* Subtle breathe — single CSS animation, purposeful (signals "live") */
   animation: breathe 3s ease-in-out infinite;
 }
 
@@ -167,18 +141,9 @@ nav a:hover {
   background: var(--border-muted);
 }
 
-nav a:focus-visible {
-  outline: 2px solid var(--border-focus);
-  outline-offset: 2px;
-}
-
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero {
   padding: var(--sp-16) 0 var(--sp-12);
   border-bottom: 1px solid var(--border-muted);
-  max-width: 780px;
 }
 
 .badge {
@@ -210,7 +175,7 @@ nav a:focus-visible {
   font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  max-width: 640px;
+  max-width: 680px;
   margin-bottom: var(--sp-8);
 }
 
@@ -220,12 +185,74 @@ nav a:focus-visible {
   flex-wrap: wrap;
 }
 
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-.btn-primary,
-.btn-secondary,
-.card-btn {
+/* Value Offerings Section (What I Solve & Domains) */
+.solve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.solve-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  padding: var(--sp-5);
+}
+
+.solve-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--sp-2);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.solve-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Approach Flow Banner */
+.approach-banner {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  margin-top: var(--sp-8);
+}
+
+.approach-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-4);
+}
+
+.approach-step {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-sm);
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.approach-arrow {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.btn-primary, .btn-secondary, .card-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -264,16 +291,6 @@ nav a:focus-visible {
   background: var(--bg-surface-2);
 }
 
-.btn-primary:focus-visible,
-.btn-secondary:focus-visible,
-.card-btn:focus-visible {
-  outline: 2px solid var(--border-focus);
-  outline-offset: 2px;
-}
-
-/* ============================================================
-   SECTIONS
-   ============================================================ */
 section {
   padding: var(--sp-12) 0;
   border-bottom: 1px solid var(--border-muted);
@@ -309,18 +326,12 @@ section:last-of-type {
   margin-bottom: var(--sp-10);
 }
 
-/* ============================================================
-   GRID
-   ============================================================ */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: var(--sp-4);
 }
 
-/* ============================================================
-   CASE STUDY CARDS
-   ============================================================ */
 .card {
   background: var(--bg-surface);
   border: 1px solid var(--border-muted);
@@ -335,17 +346,12 @@ section:last-of-type {
   overflow: hidden;
 }
 
-/* Top-edge accent — 3px rule, communicates card type */
 .card[data-type="case-study"]::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
   opacity: 0.6;
   transition: opacity var(--dur-normal) var(--ease-apple);
 }
@@ -355,21 +361,13 @@ section:last-of-type {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--border-subtle) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, var(--border-subtle) 0%, transparent 100%);
   opacity: 1;
 }
 
 .card:hover {
   border-color: var(--border-subtle);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.card[data-type="case-study"]:hover::before {
-  opacity: 1;
 }
 
 .card-meta {
@@ -386,7 +384,6 @@ section:last-of-type {
   letter-spacing: 0.06em;
 }
 
-/* Live indicator badge — only on live products */
 .card-status {
   display: inline-flex;
   align-items: center;
@@ -412,11 +409,21 @@ section:last-of-type {
   color: var(--text-primary);
 }
 
-.card > p,
-.card > div > p {
-  font-size: 0.875rem;
+/* Problem-Solution-Value Block in Card */
+.card-problem-value {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  font-size: 0.85rem;
+}
+
+.card-problem-value .pv-item {
   color: var(--text-secondary);
-  line-height: 1.65;
+}
+
+.card-problem-value strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .card-tech {
@@ -450,9 +457,6 @@ section:last-of-type {
   color: var(--text-primary);
 }
 
-/* ============================================================
-   ARCHITECTURE FLOW VISUALIZER
-   ============================================================ */
 .architecture-flow {
   background: var(--bg-main);
   border: 1px solid var(--border-muted);
@@ -479,8 +483,6 @@ section:last-of-type {
   scrollbar-width: none;
 }
 
-.flow-steps::-webkit-scrollbar { display: none; }
-
 .flow-node {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -493,7 +495,6 @@ section:last-of-type {
   flex-shrink: 0;
 }
 
-/* Active node — purposeful pulse, communicates "current state" */
 .flow-node.active {
   border-color: var(--accent);
   color: var(--accent);
@@ -518,9 +519,6 @@ section:last-of-type {
   flex-shrink: 0;
 }
 
-/* ============================================================
-   TIMELINE
-   ============================================================ */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -544,8 +542,6 @@ section:last-of-type {
   background: var(--bg-main);
   border: 2px solid var(--border-subtle);
   border-radius: 50%;
-  transition: border-color var(--dur-fast) var(--ease-apple),
-              background-color var(--dur-fast) var(--ease-apple);
 }
 
 .timeline-item:hover::before {
@@ -556,7 +552,6 @@ section:last-of-type {
 .timeline-title {
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
   color: var(--text-primary);
   margin-bottom: 2px;
 }
@@ -574,11 +569,6 @@ section:last-of-type {
   line-height: 1.65;
 }
 
-/* ============================================================
-   MODAL — CORRECT ANIMATION PATTERN
-   CSS trick: visibility + opacity for animatable overlay
-   display:none → display:flex cannot animate; this can.
-   ============================================================ */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -590,7 +580,6 @@ section:last-of-type {
   align-items: center;
   justify-content: center;
   padding: var(--sp-6);
-  /* Invisible but present in DOM — this allows animation */
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--dur-normal) var(--ease-apple),
@@ -612,9 +601,7 @@ section:last-of-type {
   overflow-y: auto;
   padding: var(--sp-8);
   position: relative;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.05) inset,
-    0 24px 48px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.7);
   transform: scale(0.96) translateY(6px);
   transition: transform var(--dur-slow) var(--ease-apple);
 }
@@ -622,11 +609,6 @@ section:last-of-type {
 .modal-overlay.active .modal-content {
   transform: scale(1) translateY(0);
 }
-
-/* Modal scrollbar — discreet */
-.modal-content::-webkit-scrollbar { width: 4px; }
-.modal-content::-webkit-scrollbar-track { background: transparent; }
-.modal-content::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
 
 .modal-close {
   position: absolute;
@@ -640,27 +622,8 @@ section:last-of-type {
   cursor: pointer;
   padding: 5px 8px;
   border-radius: var(--radius-sm);
-  transition: color var(--dur-fast) var(--ease-apple),
-              background-color var(--dur-fast) var(--ease-apple);
 }
 
-.modal-close:hover {
-  color: var(--text-primary);
-  background: var(--bg-surface-2);
-}
-
-.modal-content h2 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--sp-2);
-  padding-right: var(--sp-10);
-  line-height: 1.3;
-}
-
-/* ============================================================
-   CODE BLOCKS — token coloring without a library
-   ============================================================ */
 .code-wrap {
   margin-top: var(--sp-4);
   border: 1px solid var(--border-muted);
@@ -682,7 +645,6 @@ section:last-of-type {
   font-size: 0.68rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
 }
 
 pre {
@@ -694,29 +656,17 @@ pre {
   color: #e4e4e7;
   overflow-x: auto;
   margin: 0;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-subtle) transparent;
 }
-
-pre::-webkit-scrollbar { height: 4px; }
-pre::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
 
 code {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
 }
 
-/* Inline comment coloring in <pre> — avoids a JS library */
 .c-comment  { color: #52525b; font-style: italic; }
 .c-keyword  { color: #a78bfa; }
 .c-string   { color: #6ee7b7; }
 .c-type     { color: #93c5fd; }
-.c-operator { color: #e4e4e7; }
 
-/* ============================================================
-   SCROLL-DRIVEN REVEAL
-   Stagger delays applied via data-delay attribute in HTML
-   ============================================================ */
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(12px);
@@ -729,14 +679,10 @@ code {
   transform: translateY(0);
 }
 
-/* Stagger: cards in grid get a small delay multiplier */
 .reveal-delay-1 { transition-delay: 60ms; }
 .reveal-delay-2 { transition-delay: 120ms; }
 .reveal-delay-3 { transition-delay: 180ms; }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer {
   padding: var(--sp-8) 0;
   text-align: center;
@@ -745,78 +691,17 @@ footer {
   border-top: 1px solid var(--border-muted);
 }
 
-/* ============================================================
-   RESPONSIVE
-   Three explicit breakpoints — 375, 768, 1280
-   ============================================================ */
-
-/* Tablet */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-content {
-    padding: var(--sp-6);
-    max-height: 90vh;
-  }
+  .hero h1 { font-size: 2.2rem; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .approach-steps { flex-direction: column; }
+  .approach-arrow { transform: rotate(90deg); }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--sp-3);
-    padding: var(--sp-3) var(--sp-4);
-  }
-
-  nav {
-    gap: 2px;
-    width: 100%;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-    padding: var(--sp-1) var(--sp-2);
-  }
-
-  .container {
-    padding: 0 var(--sp-4);
-  }
-
-  .hero {
-    padding: var(--sp-10) 0 var(--sp-8);
-  }
-
-  .hero h1 {
-    font-size: 1.75rem;
-    letter-spacing: -0.02em;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-  }
-
-  .btn-primary, .btn-secondary {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .timeline {
-    padding-left: var(--sp-5);
-  }
-
-  .modal-content {
-    padding: var(--sp-5);
-    border-radius: var(--radius-md);
-  }
+  header { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
+  .container { padding: 0 var(--sp-4); }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-btns { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
 }

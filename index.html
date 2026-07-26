@@ -13,6 +13,7 @@
   <header>
     <div class="logo">SYSTEMS.PORTFOLIO</div>
     <nav aria-label="Main Navigation">
+      <a href="#solutions">Solutions</a>
       <a href="#case-studies">Case Studies</a>
       <a href="#architecture">ADRs</a>
       <a href="#experience">Experience</a>
@@ -23,46 +24,103 @@
   <main class="container">
 
     <!-- ============================================================
-         HERO
+         HERO & VALUE OFFERINGS
          ============================================================ -->
     <section class="hero reveal-on-scroll">
-      <div class="badge">Systems Architecture · Security · Applied AI</div>
+      <div class="badge">Business Systems · Security · Applied AI</div>
       <h1>Software Engineer —<br>Business Systems & Automation</h1>
       <p>
-        Production experience building multi-tenant workflow platforms, applying
-        application-layer security (AES-256-GCM, database immutability triggers),
-        and designing systems with formal Architecture Decision Records.
+        I design and build reliable digital systems for organizations that need process automation,
+        enterprise integration, data security, and operational visibility.
       </p>
       <div class="hero-btns">
         <a href="#case-studies" class="btn-primary" id="hero-cta-cases">Explore Case Studies</a>
-        <a href="#architecture" class="btn-secondary" id="hero-cta-adrs">View Architecture Decisions</a>
+        <a href="#architecture" class="btn-secondary" id="hero-cta-adrs">View Decision Records (ADRs)</a>
+      </div>
+
+      <!-- Engineering Approach Banner -->
+      <div class="approach-banner reveal-on-scroll" style="margin-top: 2.5rem;">
+        <div class="section-label">Engineering Approach</div>
+        <div class="approach-steps">
+          <div class="approach-step">1. Understand Process</div>
+          <span class="approach-arrow">→</span>
+          <div class="approach-step">2. Model Business Rules</div>
+          <span class="approach-arrow">→</span>
+          <div class="approach-step">3. Design Architecture</div>
+          <span class="approach-arrow">→</span>
+          <div class="approach-step">4. Build Reliable Systems</div>
+          <span class="approach-arrow">→</span>
+          <div class="approach-step">5. Measure Impact</div>
+        </div>
       </div>
     </section>
 
     <!-- ============================================================
-         CASE STUDIES
+         WHAT I SOLVE & BUSINESS DOMAINS
+         ============================================================ -->
+    <section id="solutions">
+      <p class="section-label reveal-on-scroll">Organizational Value</p>
+      <h2 class="section-title reveal-on-scroll">What I Solve</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Targeted system capabilities designed to eliminate manual bottlenecks, secure data, and connect legacy workflows.
+      </p>
+
+      <div class="solve-grid reveal-on-scroll">
+        <div class="solve-card">
+          <h4><span>⚙️</span> Process Automation</h4>
+          <p>Standardizing complex multi-step approvals, state machines, and document workflows with zero manual coordination overhead.</p>
+        </div>
+        <div class="solve-card">
+          <h4><span>🏢</span> Internal Business Systems</h4>
+          <p>Building high-performance multi-tenant platforms, RBAC hierarchies, and tamper-proof audit trails for enterprise operations.</p>
+        </div>
+        <div class="solve-card">
+          <h4><span>🤖</span> AI Knowledge & Operations</h4>
+          <p>Integrating structured AI retrieval and automated testing to assist internal decision-making without data leakage risks.</p>
+        </div>
+        <div class="solve-card">
+          <h4><span>🔗</span> Enterprise Integration</h4>
+          <p>Connecting legacy systems, databases, and APIs via reliable event-driven patterns (Outbox/Inbox) for clean data flow.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;" class="reveal-on-scroll">
+        <span class="section-label" style="display:block; margin-bottom: 0.75rem;">Business Domains Handled</span>
+        <div class="card-tech">
+          <span class="tech-pill" style="font-size:0.75rem; padding: 4px 10px;">Manufacturing Operations</span>
+          <span class="tech-pill" style="font-size:0.75rem; padding: 4px 10px;">Enterprise Workflow Engine</span>
+          <span class="tech-pill" style="font-size:0.75rem; padding: 4px 10px;">B2B Custom Fabrication Systems</span>
+          <span class="tech-pill" style="font-size:0.75rem; padding: 4px 10px;">AI Knowledge Management</span>
+          <span class="tech-pill" style="font-size:0.75rem; padding: 4px 10px;">Operational Analytics</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CASE STUDIES (PROBLEM -> SOLUTION -> ARCHITECTURE -> VALUE)
          ============================================================ -->
     <section id="case-studies">
       <p class="section-label reveal-on-scroll">Production Systems</p>
-      <h2 class="section-title reveal-on-scroll">Case Studies</h2>
+      <h2 class="section-title reveal-on-scroll">Featured Case Studies</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Each case documents the real problem, the architectural decision made, and the implementation pattern used. All three systems are in active production.
+        Production-grade implementations. Each case details the business problem, architectural design, and operational value delivered.
       </p>
 
       <div class="grid-3">
 
-        <!-- Case 1 -->
+        <!-- Case 1: Flagship Workflow Engine -->
         <article class="card reveal-on-scroll reveal-delay-1" data-type="case-study" id="card-case1">
           <div class="card-meta">
-            <span class="card-tag">Case Study 01</span>
+            <span class="card-tag">Flagship · Case Study 01</span>
             <span class="card-status">Live</span>
           </div>
           <div>
             <h3>Universal Workflow & Approval Engine</h3>
-            <p>
-              Configurable Business Process Engine (BPE) for multi-step enterprise approvals.
-              AES-256-GCM PII encryption with HMAC blind indexing. Append-only audit history.
-            </p>
+            <div class="card-problem-value" style="margin-top: 0.75rem;">
+              <div class="pv-item"><strong>Problem:</strong> Enterprise approvals rely on spreadsheets and manual chat coordination.</div>
+              <div class="pv-item"><strong>Solution:</strong> Configurable Business Process Engine (BPE) supporting multi-step domain approvals.</div>
+              <div class="pv-item"><strong>Value:</strong> Standardized operational workflows with 100% audit visibility.</div>
+            </div>
           </div>
           <div class="card-tech">
             <span class="tech-pill">NestJS</span>
@@ -85,11 +143,11 @@
             </div>
           </div>
           <button class="card-btn" id="btn-case1" onclick="openModal('modal-case1')">
-            Inspect Schema & Architecture
+            Inspect Problem & Architecture
           </button>
         </article>
 
-        <!-- Case 2 -->
+        <!-- Case 2: Immutable Event Ledger -->
         <article class="card reveal-on-scroll reveal-delay-2" data-type="case-study" id="card-case2">
           <div class="card-meta">
             <span class="card-tag">Case Study 02</span>
@@ -97,10 +155,11 @@
           </div>
           <div>
             <h3>Immutable Event & Audit Ledger</h3>
-            <p>
-              Offline-first event scanning platform with PL/pgSQL immutability trigger
-              enforcing tamper-proof ledger at database engine level. No application-layer bypass possible.
-            </p>
+            <div class="card-problem-value" style="margin-top: 0.75rem;">
+              <div class="pv-item"><strong>Problem:</strong> Application-layer audit logs can be bypassed or altered during DB maintenance.</div>
+              <div class="pv-item"><strong>Solution:</strong> Engine-level PL/pgSQL immutability trigger blocking UPDATE/DELETE.</div>
+              <div class="pv-item"><strong>Value:</strong> Tamper-proof, audit-compliant financial & activity event log.</div>
+            </div>
           </div>
           <div class="card-tech">
             <span class="tech-pill">Fastify</span>
@@ -125,7 +184,7 @@
           </button>
         </article>
 
-        <!-- Case 3 -->
+        <!-- Case 3: B2B Document Approval Hub -->
         <article class="card reveal-on-scroll reveal-delay-3" data-type="case-study" id="card-case3">
           <div class="card-meta">
             <span class="card-tag">Case Study 03</span>
@@ -133,10 +192,11 @@
           </div>
           <div>
             <h3>B2B Document Approval Hub</h3>
-            <p>
-              Technical drawing approval state machine for B2B custom fabrication.
-              Structured spec capture, revision versioning, and automated contract PDF generation.
-            </p>
+            <div class="card-problem-value" style="margin-top: 0.75rem;">
+              <div class="pv-item"><strong>Problem:</strong> Custom fabrication signoffs suffer from spec mismatches and delayed contracts.</div>
+              <div class="pv-item"><strong>Solution:</strong> Technical drawing approval state machine with automated contract PDF output.</div>
+              <div class="pv-item"><strong>Value:</strong> Zero spec mismatch risk and immediate client agreement generation.</div>
+            </div>
           </div>
           <div class="card-tech">
             <span class="tech-pill">Next.js App Router</span>
@@ -170,8 +230,7 @@
       <p class="section-label reveal-on-scroll">Governance</p>
       <h2 class="section-title reveal-on-scroll">Architecture Decision Records</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Formal decision logs documenting <em>why</em> a design was chosen — not just what was built.
-        Written before the code, not after.
+        Formal decision logs documenting <em>why</em> a design was chosen — trade-offs, rejected alternatives, and architectural boundaries.
       </p>
 
       <div class="grid-3">
@@ -259,10 +318,10 @@
          RESEARCH
          ============================================================ -->
     <section id="research">
-      <p class="section-label reveal-on-scroll">Academic</p>
+      <p class="section-label reveal-on-scroll">Academic & Applied AI</p>
       <h2 class="section-title reveal-on-scroll">Applied AI Research</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Undergraduate thesis investigating specification bias in LLM-generated test suites.
+        Undergraduate thesis investigating specification bias and internal knowledge applicability in AI tools.
       </p>
 
       <article class="card reveal-on-scroll" data-type="case-study" id="card-research" style="max-width: 680px;">
@@ -407,17 +466,16 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
         The system spans multiple products. Without explicit boundaries, all of it collapses into one
-        super-app or fragments into ad-hoc tables with no owner. Options: ~6 broad domains (too coarse),
-        ~20 fine domains (too much overhead). 10 domains balances scale and legibility.
+        super-app or fragments into ad-hoc tables with no owner.
       </p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
         Adopt 10 domains: Platform · Commerce · Relationship · Operations · Content · Intelligence ·
         Automation · Analytics · Finance · Integration. Each domain owns its model, data, rules, API,
-        events, permissions, and lifecycle. The set is closed — a new ADR is required to add or remove.
+        events, permissions, and lifecycle.
       </p>
       <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
         Every business record has a clear home. Cross-domain collaboration goes through events/APIs,
-        never through shared tables. Platform remains a trust layer, not a super-monolith.
+        never through shared tables.
       </p>
     </div>
   </div>
@@ -428,16 +486,7 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <h2 id="madr6-title">ADR 0006: Transactional Outbox / Inbox</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
-        Domains must collaborate through events, never shared tables. A single paid-order event fans
-        out to seven domains. In-process emit loses events on crash. A broker is premature overhead.
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
-        Each emitting domain owns <code>{domain}_outbox</code>, written in the same DB transaction as the
-        state change. Each consuming domain owns <code>{domain}_inbox</code>, keyed by event ID — making
-        consumption idempotent. A real broker can be added later without rewriting either table.
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
-        No event is lost on crash. No event is processed twice. No new infrastructure at current scale.
+        Domains must collaborate through events, never shared tables. Outbox/Inbox guarantees durable event delivery without a heavy message broker at current scale.
       </p>
     </div>
   </div>
@@ -445,19 +494,10 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
   <div id="modal-adr7" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="madr7-title">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal('modal-adr7')" aria-label="Close">&times;</button>
-      <h2 id="madr7-title">ADR 0007: Platform Owns Module Entitlements</h2>
+      <h2 id="madr7-title">ADR 0007: Platform Module Entitlements</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
-        If each module implements its own entitlement check, the logic diverges over time, edge cases
-        are handled inconsistently, and a billing change requires updates across all modules.
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
-        Platform is the single source of truth for module entitlements. Any module calls the
-        Platform entitlement service or reads its cache — never maintains its own entitlement state.
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
-        Billing changes propagate automatically. Entitlement logic is tested once, in one place.
-        Modules become simpler — they make a query, not a policy decision.
+        Platform is the single source of truth for module entitlements, eliminating duplicated RBAC logic across downstream services.
       </p>
     </div>
   </div>
@@ -468,17 +508,7 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <h2 id="mres-title">AI Test Generation & Specification Bias</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Undergraduate Thesis · Empirical Study</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Research Question</strong><br>
-        Do LLM-generated test suites systematically overfit to the happy path described in a
-        specification, while consistently failing to cover edge cases and negative test paths?
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Methodology</strong><br>
-        LLM prompting with varied temperature and prompt structures → coverage analysis against
-        human-authored test suites → reproducibility testing across multiple sessions.
-      </p>
-      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Key Findings</strong><br>
-        Happy-path bias is consistent and measurable. Deterministic sampling (temperature=0) produces
-        reproducible bias — not unbiased output. Specification quality is the dominant variable:
-        ambiguous specs produce the worst AI coverage regardless of model.
+        Do LLM-generated test suites systematically overfit to the happy path described in a specification?
       </p>
     </div>
   </div>
@@ -487,9 +517,7 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
     <p>Software Engineering Portfolio &mdash; Business Systems, Architecture & Applied AI</p>
   </footer>
 
-  <!-- Native JS: IntersectionObserver + Modal (< 800 bytes, 0 dependencies) -->
   <script>
-    // Scroll-Driven Reveal
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -501,13 +529,10 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
     );
     document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
 
-    // Modal — uses visibility/opacity transition (not display:none)
     function openModal(id) {
       const modal = document.getElementById(id);
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      // Move focus to modal content for keyboard accessibility
-      modal.querySelector('.modal-content').focus();
     }
 
     function closeModal(id) {
@@ -515,14 +540,12 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       document.body.style.overflow = '';
     }
 
-    // Close on overlay click
     document.querySelectorAll('.modal-overlay').forEach((overlay) =>
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeModal(overlay.id);
       })
     );
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         document.querySelectorAll('.modal-overlay.active').forEach((m) => closeModal(m.id));
