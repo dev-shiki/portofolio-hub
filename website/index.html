@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer — Business Systems & Automation | Portfolio</title>
+  <meta name="description" content="Engineering portfolio: configurable workflow engines, immutable audit ledgers, B2B approval systems, architecture decision records, and applied AI research.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+
+  <!-- Navigation -->
+  <header>
+    <div class="logo">SYSTEMS.PORTFOLIO</div>
+    <nav>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#architecture">ADRs</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge">Business Systems · Architecture · Security · Applied AI</div>
+      <h1>Software Engineer — Business Systems & Automation</h1>
+      <p>
+        Production experience building multi-tenant workflow platforms, applying application-layer
+        security (AES-256-GCM, database immutability triggers), and designing systems with
+        formal Architecture Decision Records.
+      </p>
+      <div class="hero-btns">
+        <a href="#case-studies" class="btn-primary" id="hero-cta-cases">Explore Case Studies</a>
+        <a href="#architecture" class="btn-secondary" id="hero-cta-adrs">View Architecture Decisions</a>
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section id="case-studies">
+      <h2 class="section-title">Case Studies</h2>
+      <p class="section-subtitle">
+        Production-grade systems. Each case documents the problem, architectural decisions, and key implementation patterns.
+      </p>
+
+      <div class="grid-3">
+
+        <!-- Case 1 -->
+        <div class="card" id="card-case1">
+          <div>
+            <div class="card-tag">Case Study 01 · Live</div>
+            <h3>Universal Workflow & Approval Engine</h3>
+            <p>
+              Configurable Business Process Engine (BPE) for multi-step enterprise approvals.
+              AES-256-GCM PII encryption with HMAC blind indexing. Append-only audit history.
+            </p>
+            <div class="card-tech">
+              <span class="tech-pill">NestJS</span>
+              <span class="tech-pill">Prisma ORM</span>
+              <span class="tech-pill">AES-256-GCM</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">HMAC Blind Index</span>
+            </div>
+          </div>
+          <button class="card-btn" id="btn-case1" onclick="openModal('modal-case1')">
+            Inspect Schema & Architecture
+          </button>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="card" id="card-case2">
+          <div>
+            <div class="card-tag">Case Study 02 · Live</div>
+            <h3>Immutable Event & Audit Ledger</h3>
+            <p>
+              Offline-first event scanning platform with PL/pgSQL immutability trigger
+              enforcing tamper-proof ledger at the database engine level. No application bypass possible.
+            </p>
+            <div class="card-tech">
+              <span class="tech-pill">Fastify</span>
+              <span class="tech-pill">Drizzle ORM</span>
+              <span class="tech-pill">PL/pgSQL Trigger</span>
+              <span class="tech-pill">Offline PWA</span>
+              <span class="tech-pill">Idempotent Sync</span>
+            </div>
+          </div>
+          <button class="card-btn" id="btn-case2" onclick="openModal('modal-case2')">
+            Inspect Trigger Implementation
+          </button>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="card" id="card-case3">
+          <div>
+            <div class="card-tag">Case Study 03 · Live</div>
+            <h3>B2B Document Approval Hub</h3>
+            <p>
+              Technical drawing approval state machine for B2B custom fabrication.
+              Structured spec capture, revision versioning, and automated contract PDF generation.
+            </p>
+            <div class="card-tech">
+              <span class="tech-pill">Next.js App Router</span>
+              <span class="tech-pill">Sanity CMS</span>
+              <span class="tech-pill">PDF Generation</span>
+              <span class="tech-pill">State Machine</span>
+            </div>
+          </div>
+          <button class="card-btn" id="btn-case3" onclick="openModal('modal-case3')">
+            Inspect Approval State Machine
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ADRs -->
+    <section id="architecture">
+      <h2 class="section-title">Architecture Decision Records</h2>
+      <p class="section-subtitle">
+        Formal decision logs documenting <em>why</em> a design was chosen — not just what was built.
+        Written for systems handling commerce, event delivery, access control, and domain boundaries.
+      </p>
+
+      <div class="grid-3">
+        <div class="card" id="card-adr1">
+          <div class="card-tag">ADR 0001 · Accepted</div>
+          <h3>10-Domain Bounded Context Map</h3>
+          <p>
+            Defines explicit bounded context boundaries across Platform, Commerce, Operations,
+            Relationships, and six other domains to prevent the "super-app" collapse pattern.
+          </p>
+          <button class="card-btn" id="btn-adr1" onclick="openModal('modal-adr1')">Read Decision</button>
+        </div>
+
+        <div class="card" id="card-adr6">
+          <div class="card-tag">ADR 0006 · Accepted</div>
+          <h3>Event Delivery: Transactional Outbox / Inbox</h3>
+          <p>
+            Guarantees at-least-once, exactly-once-in-effect domain event delivery
+            using the outbox/inbox pattern — no message broker required at current scale.
+          </p>
+          <button class="card-btn" id="btn-adr6" onclick="openModal('modal-adr6')">Read Decision</button>
+        </div>
+
+        <div class="card" id="card-adr7">
+          <div class="card-tag">ADR 0007 · Accepted</div>
+          <h3>Platform Owns Module Entitlements</h3>
+          <p>
+            Centralises RBAC entitlement checks in the Platform core to eliminate
+            duplicated permission logic and ensure consistent enforcement across all modules.
+          </p>
+          <button class="card-btn" id="btn-adr7" onclick="openModal('modal-adr7')">Read Decision</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-subtitle">
+        A combination of team production engineering and independent product development.
+      </p>
+
+      <div class="timeline">
+
+        <div class="timeline-item" id="exp-ventures">
+          <div class="timeline-title">Product Systems Engineer</div>
+          <div class="timeline-role">Independent Products — Beresin OS · Sentinel System · B2B Platform</div>
+          <div class="timeline-desc">
+            Designed and shipped multi-tenant service operations platform with Business Process Engine
+            and AES-256-GCM PII encryption. Built offline-first event platform with database-level
+            immutable audit ledger. Developed B2B approval and automated contract generation system.
+          </div>
+        </div>
+
+        <div class="timeline-item" id="exp-team">
+          <div class="timeline-title">Software Engineer</div>
+          <div class="timeline-role">Previous Employer · Enterprise Production Systems</div>
+          <div class="timeline-desc">
+            Contributed to multi-branch organizational access control systems and automated
+            cloud infrastructure provisioning with API gateway integration.
+            Team engineering in Agile/Scrum production environment.
+          </div>
+        </div>
+
+        <div class="timeline-item" id="exp-edu">
+          <div class="timeline-title">Bachelor of Computer Science / IT</div>
+          <div class="timeline-role">University — Thesis: AI Test Generation & Specification Bias</div>
+          <div class="timeline-desc">
+            Empirical research on systematic bias in LLM-generated test suites.
+            Measured coverage gaps between AI-generated and human-authored test suites across
+            boundary values, error states, and negative test paths.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research">
+      <h2 class="section-title">Applied AI Research</h2>
+      <p class="section-subtitle">
+        Undergraduate thesis investigating specification bias in LLM-generated test suites.
+      </p>
+
+      <div class="card" id="card-research" style="margin-bottom: 4rem;">
+        <div class="card-tag">Thesis Research · Empirical Study</div>
+        <h3>Automated AI Test Generation & Specification Bias Analysis</h3>
+        <p>
+          Do LLM-generated test suites exhibit systematic happy-path bias? This empirical research
+          measured edge-case coverage gaps, boundary value coverage, and reproducibility
+          across multiple model configurations and prompt strategies.
+        </p>
+        <div class="card-tech" style="margin-bottom:1rem;">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">LLM Prompting</span>
+          <span class="tech-pill">Coverage Analysis</span>
+          <span class="tech-pill">Empirical Study</span>
+        </div>
+        <button class="card-btn" id="btn-research" onclick="openModal('modal-research')">Read Research Overview</button>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- ============================================================
+       MODALS
+       ============================================================ -->
+
+  <!-- Modal Case 1 -->
+  <div id="modal-case1" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-case1')" aria-label="Close">&times;</button>
+      <h2 id="m1-title">Case Study 01: Universal Workflow Engine</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;">
+        Application-layer AES-256-GCM PII encryption + HMAC-SHA256 blind indexing + append-only audit log.
+        Domain-agnostic state machine handles procurement, HR, maintenance, capex — same engine, different payloads.
+      </p>
+      <pre><code>// User: PII encrypted at application layer before DB write
+model User {
+  // 🔒 AES-256-GCM ciphertext — plaintext never stored
+  emailCiphertext  String  @map("email")
+  // 🔎 HMAC-SHA256 — enables WHERE email_bidx = ? without decryption
+  emailBlindIndex  String  @unique @map("email_bidx")
+}
+
+// Generic BPE request — any approval domain
+model WorkflowRequest {
+  domain        String         // "procurement" | "hr" | "maintenance"
+  payload       Json           // typed domain-specific fields
+  currentStatus WorkflowStatus @default(draft)
+
+  @@index([domain])
+  @@index([currentStatus])
+}
+
+// Append-only step log — INSERT only, never UPDATE or DELETE
+model ApprovalHistory {
+  previousStatus WorkflowStatus
+  newStatus      WorkflowStatus
+  executedAt     DateTime @default(now())
+
+  @@index([requestId])
+}</code></pre>
+    </div>
+  </div>
+
+  <!-- Modal Case 2 -->
+  <div id="modal-case2" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-case2')" aria-label="Close">&times;</button>
+      <h2 id="m2-title">Case Study 02: Immutable Ledger Trigger</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;">
+        PL/pgSQL trigger enforcing append-only semantics at the PostgreSQL engine level.
+        Cannot be bypassed by application code, API keys, or direct DB sessions —
+        only a superuser DROP TRIGGER (itself a logged DDL event) can remove it.
+      </p>
+      <pre><code>CREATE OR REPLACE FUNCTION enforce_ledger_immutability()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF TG_OP = 'UPDATE' THEN
+        RAISE EXCEPTION
+            'SECURITY VIOLATION: Ledger entry % cannot be modified. '
+            'Attempted by session user "%".',
+            OLD.id, session_user
+            USING ERRCODE = 'restrict_violation';  -- SQLSTATE 23001
+
+    ELSIF TG_OP = 'DELETE' THEN
+        RAISE EXCEPTION
+            'SECURITY VIOLATION: Ledger entry % cannot be deleted. '
+            'Attempted by session user "%".',
+            OLD.id, session_user
+            USING ERRCODE = 'restrict_violation';
+    END IF;
+
+    RETURN NULL; -- cancels the operation
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Attach: fires BEFORE every row-level UPDATE or DELETE
+CREATE TRIGGER trg_ledger_immutability
+    BEFORE UPDATE OR DELETE ON event_wallet_ledger
+    FOR EACH ROW EXECUTE FUNCTION enforce_ledger_immutability();</code></pre>
+    </div>
+  </div>
+
+  <!-- Modal Case 3 -->
+  <div id="modal-case3" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-case3')" aria-label="Close">&times;</button>
+      <h2 id="m3-title">Case Study 03: B2B Approval State Machine</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;">
+        Structured state machine governing technical drawing approvals before production commencement.
+        Every revision cycle creates a new versioned spec. Contract PDF is generated from the exact
+        approved spec version — not from human-typed text.
+      </p>
+      <pre><code>State Machine Transitions:
+
+  draft
+    └─► client_submitted
+              └─► internal_review
+                        ├─► revision_requested
+                        │         └─► client_resubmitted
+                        │                   └─► (back to internal_review)
+                        ├─► rejected          [terminal]
+                        └─► approved
+                                  └─► contract_generated  [terminal]
+                                            │
+                                            ▼
+                                  Auto-generate PDF:
+                                  - Embeds approved spec version ID
+                                  - Timestamps all signoff parties
+                                  - Cryptographic hash of approved payload</code></pre>
+    </div>
+  </div>
+
+  <!-- Modal ADR 1 -->
+  <div id="modal-adr1" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="madr1-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-adr1')" aria-label="Close">&times;</button>
+      <h2 id="madr1-title">ADR 0001: 10-Domain Bounded Context Map</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Status</strong>: Accepted · 2026-06-18</p>
+      <p><strong>Context</strong></p>
+      <p>
+        The system spans multiple products (commerce, POS, CRM, AI, invoicing). Without explicit
+        boundaries, everything collapses into one super-app or fragments into ad-hoc tables with no
+        owner. Options evaluated: ~6 broad domains (too coarse — Commerce, Operations, Relationship
+        conflate), ~20 fine domains (too much ownership and CI overhead), 10 domains (optimal balance).
+      </p>
+      <p style="margin-top:1rem;"><strong>Decision</strong></p>
+      <p>
+        Adopt 10 domains: Platform · Commerce · Relationship · Operations · Content · Intelligence ·
+        Automation · Analytics · Finance · Integration. Each domain owns its model, data, rules, API,
+        events, permissions, and lifecycle. The set is closed — adding or removing a domain requires a new ADR.
+      </p>
+      <p style="margin-top:1rem;"><strong>Consequences</strong></p>
+      <p>
+        Every business record has a clear home. Cross-domain collaboration must go through events/APIs,
+        never shared tables. Platform remains a trust layer, not a super-monolith.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal ADR 6 -->
+  <div id="modal-adr6" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="madr6-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-adr6')" aria-label="Close">&times;</button>
+      <h2 id="madr6-title">ADR 0006: Event Delivery via Transactional Outbox / Inbox</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Status</strong>: Accepted · 2026-06-18</p>
+      <p><strong>Context</strong></p>
+      <p>
+        Domains must collaborate through events, never shared tables. A single paid-order event fans
+        out to seven domains. Three options: in-process emit (loses events on crash — unacceptable for
+        money-adjacent events), message broker now (justified overhead at current scale), or
+        transactional outbox/inbox on the existing DB.
+      </p>
+      <p style="margin-top:1rem;"><strong>Decision</strong></p>
+      <p>
+        Adopt the transactional outbox + inbox pattern. The outbox row is written in the same DB
+        transaction as the state change. Each consuming domain owns its own inbox, keyed by event ID —
+        making consumption idempotent (exactly-once in effect) over at-least-once delivery.
+        A real broker can be introduced later between the relay and the inbox without rewriting outbox or inbox tables.
+      </p>
+      <p style="margin-top:1rem;"><strong>Consequences</strong></p>
+      <p>
+        No event is lost on crash. No event is processed twice. No new infrastructure required.
+        Every domain pays a uniform, small cost: two tables + relay + dedupe.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal ADR 7 -->
+  <div id="modal-adr7" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="madr7-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-adr7')" aria-label="Close">&times;</button>
+      <h2 id="madr7-title">ADR 0007: Platform Owns Module Entitlements</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Status</strong>: Accepted · 2026-06-18</p>
+      <p><strong>Context</strong></p>
+      <p>
+        Each product module needs to check whether a tenant has purchased and activated a given feature.
+        If each module implements its own entitlement check, the logic diverges over time, edge cases
+        are handled inconsistently, and a billing change requires coordinating updates across all modules.
+      </p>
+      <p style="margin-top:1rem;"><strong>Decision</strong></p>
+      <p>
+        Platform is the single source of truth for module entitlements. Any module that needs to gate
+        a feature calls the Platform entitlement service (or reads from a Platform-owned cache),
+        never maintains its own entitlement state.
+      </p>
+      <p style="margin-top:1rem;"><strong>Consequences</strong></p>
+      <p>
+        Billing changes propagate to all modules automatically. Entitlement logic is tested once, in
+        one place. Modules become simpler — they make a single query, not a policy decision.
+        Platform becomes a critical dependency, so its availability SLA matters.
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Research -->
+  <div id="modal-research" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="mres-title">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-research')" aria-label="Close">&times;</button>
+      <h2 id="mres-title">Research: AI Test Generation & Specification Bias</h2>
+      <p style="color:var(--text-muted); margin-bottom:1rem;"><strong>Type</strong>: Undergraduate Thesis · Empirical Study</p>
+      <p><strong>Research Question</strong></p>
+      <p>
+        Do LLM-generated test suites systematically overfit to the happy path described in a
+        specification, while consistently failing to cover edge cases and negative test paths?
+      </p>
+      <p style="margin-top:1rem;"><strong>Methodology</strong></p>
+      <p style="color:var(--text-muted);">
+        Empirical study: LLM prompting with varied temperature & prompt structures → coverage analysis
+        against human-authored test suites → reproducibility testing across multiple sessions.
+      </p>
+      <p style="margin-top:1rem;"><strong>Key Findings</strong></p>
+      <ul style="color:var(--text-muted); padding-left:1.5rem; margin-top:0.5rem;">
+        <li>Happy-path bias is consistent and measurable across all tested configurations.</li>
+        <li>Explicit prompting for failure cases improved edge-case coverage significantly, but still below human-authored suites.</li>
+        <li>Deterministic sampling (temperature=0) produces <em>reproducible</em> bias — the same gaps appear every run.</li>
+        <li>Specification quality was the dominant variable — ambiguous specs produced the worst AI coverage regardless of model.</li>
+      </ul>
+      <p style="margin-top:1rem;"><strong>Practical Implication</strong></p>
+      <p>
+        AI test generation is most effective as a first-pass tool. The bottleneck is specification
+        clarity, not model capability. Structured specs (Gherkin, OpenAPI) improve AI test quality
+        more than prompt engineering alone.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Software Engineering Portfolio &mdash; Business Systems, Architecture & Applied AI</p>
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    // Close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        if (e.target === el) closeModal(el.id);
+      });
+    });
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay').forEach(function(el) {
+          if (el.style.display === 'flex') closeModal(el.id);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+// Enterprise Universal Workflow Engine — Reference Schema
+//
+// Features:
+//   - AES-256-GCM application-layer PII encryption (email, phone)
+//   - HMAC-SHA256 blind indexing for deterministic equality lookups without decryption
+//   - Configurable BPE (Business Process Engine) state machine
+//   - Append-only ApprovalHistory as tamper-evident audit trail
+//
+// This schema is intentionally domain-agnostic. The same engine serves
+// procurement, HR, maintenance, capex, or any multi-step approval workflow
+// by varying only the `domain` field and `payload` JSON structure.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Enums
+// ---------------------------------------------------------------------------
+
+enum Role {
+  owner
+  admin
+  supervisor
+  operator
+  finance
+  partner
+  client
+}
+
+enum UserStatus {
+  active
+  suspended
+  deleted
+}
+
+enum WorkflowStatus {
+  draft
+  pending_approval
+  approved
+  rejected
+  in_progress
+  completed
+  cancelled
+}
+
+// ---------------------------------------------------------------------------
+// User
+//
+// PII fields (email, phone) are AES-256-GCM encrypted at the application layer
+// before any value reaches SQL. The column holds ciphertext.
+//
+// Blind index columns (email_bidx, phone_bidx) hold a deterministic
+// HMAC-SHA256 of the plaintext, enabling `WHERE email_bidx = hmac(input)`
+// equality lookups without decryption.
+// ---------------------------------------------------------------------------
+model User {
+  id              String     @id @default(uuid())
+
+  // 🔒 AES-256-GCM ciphertext — plaintext never stored
+  emailCiphertext String     @map("email")
+  // 🔎 HMAC-SHA256 blind index — enables equality search without decryption
+  emailBlindIndex String     @unique @map("email_bidx")
+
+  // 🔒 Optional phone — same pattern
+  phoneCiphertext String?    @map("phone")
+  phoneBlindIndex String?    @unique @map("phone_bidx")
+
+  name            String
+  role            Role       @default(client)
+  status          UserStatus @default(active)
+  createdAt       DateTime   @default(now()) @map("created_at")
+  updatedAt       DateTime   @updatedAt @map("updated_at")
+
+  createdRequests WorkflowRequest[] @relation("RequestAuthor")
+  approvalActions ApprovalHistory[] @relation("ActorUser")
+
+  @@map("users")
+}
+
+// ---------------------------------------------------------------------------
+// WorkflowRequest — the configurable BPE request entity
+//
+// `domain` identifies the workflow type (procurement, hr, maintenance, capex).
+// `payload` holds domain-specific form data as typed JSON.
+// Status transitions are enforced by the application state machine controller.
+// ---------------------------------------------------------------------------
+model WorkflowRequest {
+  id            String         @id @default(uuid())
+  requestNumber String         @unique @map("request_number")
+  title         String
+  domain        String         // "procurement" | "hr" | "maintenance" | "capex"
+  payload       Json           // typed domain-specific form payload
+  currentStatus WorkflowStatus @default(draft) @map("current_status")
+
+  authorId      String         @map("author_id")
+  author        User           @relation("RequestAuthor", fields: [authorId], references: [id])
+
+  approvalSteps ApprovalHistory[]
+
+  createdAt     DateTime       @default(now()) @map("created_at")
+  updatedAt     DateTime       @updatedAt @map("updated_at")
+
+  @@index([domain])
+  @@index([currentStatus])
+  @@index([authorId])
+  @@map("workflow_requests")
+}
+
+// ---------------------------------------------------------------------------
+// ApprovalHistory — append-only step log
+//
+// Every state machine transition is INSERT-only. No row is ever updated or
+// deleted. This provides a tamper-evident audit trail suitable for compliance
+// and dispute resolution.
+//
+// Application-level constraints prevent UPDATE/DELETE; a DB-level trigger
+// can be added for defence-in-depth (see Case Study 02).
+// ---------------------------------------------------------------------------
+model ApprovalHistory {
+  id             String         @id @default(uuid())
+
+  requestId      String         @map("request_id")
+  request        WorkflowRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+
+  actorId        String         @map("actor_id")
+  actor          User           @relation("ActorUser", fields: [actorId], references: [id])
+
+  stepName       String         @map("step_name")
+  previousStatus WorkflowStatus @map("previous_status")
+  newStatus      WorkflowStatus @map("new_status")
+  comments       String?
+  executedAt     DateTime       @default(now()) @map("executed_at")
+
+  @@index([requestId])
+  @@index([actorId])
+  @@map("approval_history")
+}
