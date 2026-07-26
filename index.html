@@ -13,6 +13,7 @@
   <header>
     <div class="logo">SYSTEMS.PORTFOLIO</div>
     <nav aria-label="Main Navigation">
+      <a href="#domains">Approach</a>
       <a href="#case-studies">Case Studies</a>
       <a href="#architecture">ADRs</a>
       <a href="#experience">Experience</a>
@@ -23,27 +24,16 @@
   <main class="container">
 
     <!-- ============================================================
-         HERO
+         HERO SECTION — Enhanced with Business Context
          ============================================================ -->
     <section class="hero reveal-on-scroll">
-      <div class="badge">Systems Architecture · Security · Applied AI</div>
+      <div class="badge">Business Systems Architecture · Automation · Applied AI</div>
       <h1>Software Engineer —<br>Business Systems & Automation</h1>
       <p>
-        Production experience building multi-tenant workflow platforms, applying
-        application-layer security (AES-256-GCM, database immutability triggers),
-        and designing systems with formal Architecture Decision Records.
+        I design digital systems for organizations that need <strong>process automation</strong>,
+        <strong>internal business systems</strong>, <strong>AI-assisted knowledge management</strong>, and <strong>enterprise integration</strong>.
+        Combining production fullstack craftsmanship with formal architectural governance (ADRs).
       </p>
-
-      <!-- Business Capabilities Text Insert (Subtle & Integrated) -->
-      <div style="margin-bottom: var(--sp-8); border-left: 2px solid var(--border-subtle); padding-left: var(--sp-4);">
-        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
-          <strong style="color: var(--text-primary);">Core Value:</strong> Process Automation · Internal Business Systems · Enterprise Integration · AI Operations
-        </p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-mono);">
-          Domains: Manufacturing Operations · Enterprise Workflows · B2B Systems · Operational Analytics
-        </p>
-      </div>
-
       <div class="hero-btns">
         <a href="#case-studies" class="btn-primary" id="hero-cta-cases">Explore Case Studies</a>
         <a href="#architecture" class="btn-secondary" id="hero-cta-adrs">View Architecture Decisions</a>
@@ -51,28 +41,92 @@
     </section>
 
     <!-- ============================================================
-         CASE STUDIES
+         BUSINESS DOMAINS & ENGINEERING APPROACH (NEW CONTENT BLOCK)
+         ============================================================ -->
+    <section id="domains">
+      <p class="section-label reveal-on-scroll">Value Proposition</p>
+      <h2 class="section-title reveal-on-scroll">Business Domains & Approach</h2>
+      <p class="section-subtitle reveal-on-scroll">
+        Bridging the gap between complex organizational bottlenecks and robust engineering implementations.
+      </p>
+
+      <div class="grid-3">
+        <!-- Business Domains -->
+        <article class="card reveal-on-scroll reveal-delay-1" data-type="adr">
+          <div>
+            <div class="card-tag">Core Competencies</div>
+            <h3>What I Solve</h3>
+            <p>
+              • <strong>Process Automation</strong>: Digitizing manual approvals, purchasing & HR operations.<br>
+              • <strong>Internal Business Systems</strong>: Multi-tenant RBAC & high-density operational platforms.<br>
+              • <strong>AI Knowledge Management</strong>: Privacy-first RAG & decision assistant integration.<br>
+              • <strong>Enterprise Integration</strong>: Bridging legacy ERPs, APIs, databases & dashboards.
+            </p>
+          </div>
+        </article>
+
+        <!-- Industry Sectors -->
+        <article class="card reveal-on-scroll reveal-delay-2" data-type="adr">
+          <div>
+            <div class="card-tag">Industry Experience</div>
+            <h3>Business Domains</h3>
+            <p>
+              • <strong>Manufacturing Operations</strong>: Production line tracking & inventory sync.<br>
+              • <strong>Enterprise Workflow</strong>: Multi-step approval state machines & audit trails.<br>
+              • <strong>B2B Fabrication Systems</strong>: Working drawing signoffs & automated contract PDFs.<br>
+              • <strong>Operational Analytics</strong>: KPI metrics definition & decision dashboard engines.
+            </p>
+          </div>
+        </article>
+
+        <!-- Engineering Approach -->
+        <article class="card reveal-on-scroll reveal-delay-3" data-type="adr">
+          <div>
+            <div class="card-tag">Methodology</div>
+            <h3>Engineering Approach</h3>
+            <div class="architecture-flow" style="margin-top: 0.5rem;">
+              <div class="flow-title">
+                <span>CONSULTANT-ENGINEER PIPELINE</span>
+              </div>
+              <div class="flow-steps">
+                <span class="flow-node">Understand Process</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Model Rules</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node active">Design Arch</span>
+                <span class="flow-arrow">→</span>
+                <span class="flow-node">Measure Impact</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CASE STUDIES — Enhanced with Problem → Solution → Value
          ============================================================ -->
     <section id="case-studies">
       <p class="section-label reveal-on-scroll">Production Systems</p>
-      <h2 class="section-title reveal-on-scroll">Case Studies</h2>
+      <h2 class="section-title reveal-on-scroll">Featured Case Studies</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Each case documents the real problem, the architectural decision made, and the implementation pattern used. All three systems are in active production.
+        Each case study documents the operational problem, the technical architecture decision, and the measurable business value delivered in live production environments.
       </p>
 
       <div class="grid-3">
 
-        <!-- Case 1 -->
+        <!-- Case 1: Flagship Workflow Engine -->
         <article class="card reveal-on-scroll reveal-delay-1" data-type="case-study" id="card-case1">
           <div class="card-meta">
-            <span class="card-tag">Case Study 01</span>
-            <span class="card-status">Live</span>
+            <span class="card-tag">Case Study 01 · Flagship</span>
+            <span class="card-status">Live Production</span>
           </div>
           <div>
             <h3>Universal Workflow & Approval Engine</h3>
             <p>
-              Configurable Business Process Engine (BPE) for multi-step enterprise approvals.
-              AES-256-GCM PII encryption with HMAC blind indexing. Append-only audit history.
+              <strong>Problem</strong>: Enterprise approval processes (procurement, capex, HR) depend on manual spreadsheets and informal chat threads, causing zero visibility and compliance risks.<br><br>
+              <strong>Solution</strong>: Configurable Business Process Engine (BPE) supporting multi-step approval state machines with application-layer AES-256-GCM PII encryption and HMAC blind indexing.<br><br>
+              <strong>Business Value</strong>: Standardized multi-department workflows with 100% tamper-evident auditability and zero plaintext PII exposure.
             </p>
           </div>
           <div class="card-tech">
@@ -100,17 +154,18 @@
           </button>
         </article>
 
-        <!-- Case 2 -->
+        <!-- Case 2: Immutable Event Ledger -->
         <article class="card reveal-on-scroll reveal-delay-2" data-type="case-study" id="card-case2">
           <div class="card-meta">
             <span class="card-tag">Case Study 02</span>
-            <span class="card-status">Live</span>
+            <span class="card-status">Live Production</span>
           </div>
           <div>
             <h3>Immutable Event & Audit Ledger</h3>
             <p>
-              Offline-first event scanning platform with PL/pgSQL immutability trigger
-              enforcing tamper-proof ledger at database engine level. No application-layer bypass possible.
+              <strong>Problem</strong>: Financial & event traffic ledgers are vulnerable to silent data modifications via compromised database credentials or application bugs.<br><br>
+              <strong>Solution</strong>: Offline-first event scanning platform with PostgreSQL PL/pgSQL immutability trigger (`BEFORE UPDATE/DELETE`) enforcing append-only rules at the engine level.<br><br>
+              <strong>Business Value</strong>: Forensic tamper-proof integrity for high-volume transactions with seamless offline PWA idempotency sync.
             </p>
           </div>
           <div class="card-tech">
@@ -136,17 +191,18 @@
           </button>
         </article>
 
-        <!-- Case 3 -->
+        <!-- Case 3: B2B Document Approval Hub -->
         <article class="card reveal-on-scroll reveal-delay-3" data-type="case-study" id="card-case3">
           <div class="card-meta">
             <span class="card-tag">Case Study 03</span>
-            <span class="card-status">Live</span>
+            <span class="card-status">Live Production</span>
           </div>
           <div>
             <h3>B2B Document Approval Hub</h3>
             <p>
-              Technical drawing approval state machine for B2B custom fabrication.
-              Structured spec capture, revision versioning, and automated contract PDF generation.
+              <strong>Problem</strong>: Miscommunication between client design teams and factory lines on custom CAD specs, causing costly material rework and contract disputes.<br><br>
+              <strong>Solution</strong>: Structured working drawing approval state machine capturing versioned spec data and automating legal PDF contract generation.<br><br>
+              <strong>Business Value</strong>: Eliminated production errors from unapproved drawing revisions and automated B2B contract creation.
             </p>
           </div>
           <div class="card-tech">
@@ -175,14 +231,14 @@
     </section>
 
     <!-- ============================================================
-         ADRs
+         ARCHITECTURE DECISION RECORDS (ADRs)
          ============================================================ -->
     <section id="architecture">
-      <p class="section-label reveal-on-scroll">Governance</p>
-      <h2 class="section-title reveal-on-scroll">Architecture Decision Records</h2>
+      <p class="section-label reveal-on-scroll">Governance & System Design</p>
+      <h2 class="section-title reveal-on-scroll">Architecture Decision Records (ADRs)</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Formal decision logs documenting <em>why</em> a design was chosen — not just what was built.
-        Written before the code, not after.
+        Formal decision logs documenting <em>context → decision → trade-offs → consequences</em>.
+        Demonstrating architectural maturity and system boundary governance.
       </p>
 
       <div class="grid-3">
@@ -191,8 +247,9 @@
             <div class="card-tag">ADR 0001 · Accepted</div>
             <h3>10-Domain Bounded Context Map</h3>
             <p>
-              Prevents super-app collapse by establishing explicit bounded context boundaries
-              across Platform, Commerce, Operations, Relationships, and six other domains.
+              <strong>Context</strong>: Multi-product platform expansion risks super-app collapse.<br>
+              <strong>Decision</strong>: Enforce 10 strict bounded contexts (Platform, Commerce, Operations, Finance, etc.).<br>
+              <strong>Consequence</strong>: Zero cross-domain table sharing; all collaboration forced through APIs/events.
             </p>
           </div>
           <button class="card-btn" id="btn-adr1" onclick="openModal('modal-adr1')">Read Decision</button>
@@ -203,8 +260,9 @@
             <div class="card-tag">ADR 0006 · Accepted</div>
             <h3>Event Delivery: Transactional Outbox / Inbox</h3>
             <p>
-              At-least-once, exactly-once-in-effect domain event delivery
-              via outbox/inbox pattern — no message broker required at current scale.
+              <strong>Context</strong>: Cross-domain events require reliable fan-out without losing messages on crashes.<br>
+              <strong>Decision</strong>: Adopt SQL-based Outbox/Inbox pattern in the same DB transaction.<br>
+              <strong>Consequence</strong>: Guaranteed at-least-once delivery and idempotent consumption without message broker overhead.
             </p>
           </div>
           <button class="card-btn" id="btn-adr6" onclick="openModal('modal-adr6')">Read Decision</button>
@@ -215,8 +273,9 @@
             <div class="card-tag">ADR 0007 · Accepted</div>
             <h3>Platform Owns Module Entitlements</h3>
             <p>
-              Centralises RBAC entitlement checks in Platform core to eliminate
-              duplicated permission logic across all downstream modules.
+              <strong>Context</strong>: Duplicated feature-gating checks cause security drift across modules.<br>
+              <strong>Decision</strong>: Centralize RBAC entitlement checks in Platform core service.<br>
+              <strong>Consequence</strong>: Single audit point for billing/permission changes across all applications.
             </p>
           </div>
           <button class="card-btn" id="btn-adr7" onclick="openModal('modal-adr7')">Read Decision</button>
@@ -225,23 +284,23 @@
     </section>
 
     <!-- ============================================================
-         EXPERIENCE
+         EXPERIENCE & TIMELINE
          ============================================================ -->
     <section id="experience">
-      <p class="section-label reveal-on-scroll">Background</p>
-      <h2 class="section-title reveal-on-scroll">Experience</h2>
+      <p class="section-label reveal-on-scroll">Professional Track Record</p>
+      <h2 class="section-title reveal-on-scroll">Experience & Production Impact</h2>
       <p class="section-subtitle reveal-on-scroll">
-        A combination of team production engineering and independent product development.
+        A balanced track record of team enterprise engineering and founding independent digital products.
       </p>
 
       <div class="timeline">
         <div class="timeline-item reveal-on-scroll" id="exp-ventures">
-          <div class="timeline-title">Product Systems Engineer</div>
-          <div class="timeline-role">Independent Products · Beresin OS · Sentinel System · B2B Platform</div>
+          <div class="timeline-title">Product Systems Engineer & Founder</div>
+          <div class="timeline-role">Independent Digital Products · Beresin OS · Sentinel System · B2B Hub</div>
           <div class="timeline-desc">
-            Designed and shipped multi-tenant service operations platform with Business Process Engine
-            and AES-256-GCM PII encryption. Built offline-first event platform with database-level
-            immutable audit ledger. Developed B2B approval and automated contract generation system.
+            Designed, built, and launched multi-tenant service operations platform with Business Process Engine
+            and AES-256-GCM PII encryption. Developed offline-first event scanning platform with database-level
+            immutable audit ledgers. Built B2B fabrication approval platform automating CAD signoffs and PDF contracts.
           </div>
         </div>
 
@@ -249,9 +308,8 @@
           <div class="timeline-title">Software Engineer</div>
           <div class="timeline-role">Previous Employer · Enterprise Production Systems</div>
           <div class="timeline-desc">
-            Contributed to multi-branch organizational access control systems and automated
-            cloud infrastructure provisioning with API gateway integration.
-            Team engineering in Agile/Scrum production environment.
+            Engineered multi-branch organizational access control (RBAC) schemas handling nested branch hierarchies and data isolation.
+            Developed automated cloud VM provisioning engines and Kong API Gateway request routing microservices in an Agile team.
           </div>
         </div>
 
@@ -259,34 +317,34 @@
           <div class="timeline-title">Bachelor of Computer Science</div>
           <div class="timeline-role">University · Thesis: AI Test Generation & Specification Bias</div>
           <div class="timeline-desc">
-            Empirical research measuring coverage gaps between AI-generated and human-authored
-            test suites across boundary values, error states, and negative test paths.
+            Empirical research evaluating LLM prompt patterns, reproducibility metrics, and edge-case coverage gaps
+            when AI models generate test suites from specifications.
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         RESEARCH
+         RESEARCH & AI KNOWLEDGE ASSISTANT
          ============================================================ -->
     <section id="research">
-      <p class="section-label reveal-on-scroll">Academic</p>
-      <h2 class="section-title reveal-on-scroll">Applied AI Research</h2>
+      <p class="section-label reveal-on-scroll">Applied AI & Knowledge Systems</p>
+      <h2 class="section-title reveal-on-scroll">Applied AI Research & Integration</h2>
       <p class="section-subtitle reveal-on-scroll">
-        Undergraduate thesis investigating specification bias in LLM-generated test suites.
+        Focusing on privacy-first internal knowledge retrieval, data access permissions, and specification bias analysis.
       </p>
 
-      <article class="card reveal-on-scroll" data-type="case-study" id="card-research" style="max-width: 680px;">
+      <article class="card reveal-on-scroll" data-type="case-study" id="card-research" style="max-width: 720px;">
         <div class="card-meta">
           <span class="card-tag">Thesis Research</span>
-          <span class="card-tag">Empirical Study</span>
+          <span class="card-tag">Internal Knowledge & Decision AI</span>
         </div>
         <div>
           <h3>Automated AI Test Generation & Specification Bias Analysis</h3>
           <p>
-            Do LLM-generated test suites exhibit systematic happy-path bias? This empirical research
-            measured edge-case coverage gaps, boundary value coverage, and reproducibility
-            across multiple model configurations and prompt strategies.
+            <strong>Problem</strong>: Enterprise AI adoption is bottlenecked by data privacy fears and happy-path bias where AI test generators miss critical edge cases.<br><br>
+            <strong>Research Focus</strong>: Empirical study measuring edge-case coverage gaps, boundary value validation, and reproducibility across prompt strategies.<br><br>
+            <strong>Practical Insight</strong>: Proved that specification clarity (Gherkin/OpenAPI) and strict data permission boundaries are more vital to AI reliability than prompt engineering alone.
           </p>
         </div>
         <div class="card-tech">
@@ -304,7 +362,7 @@
   </main>
 
   <!-- ============================================================
-       MODALS
+       MODALS — Preserved exact code blocks
        ============================================================ -->
 
   <div id="modal-case1" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="m1-title">
@@ -400,8 +458,7 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
   └─► client_submitted
             └─► internal_review
                       ├─► revision_requested
-                      │         └─► client_resubmitted
-                      │                   └─► (back to internal_review)
+                      │         └─► client_resubmitted → (back to internal_review)
                       ├─► rejected                    [terminal]
                       └─► approved
                                 └─► contract_generated [terminal]
@@ -418,16 +475,17 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
         The system spans multiple products. Without explicit boundaries, all of it collapses into one
-        super-app or fragments into ad-hoc tables with no owner.
+        super-app or fragments into ad-hoc tables with no owner. Options: ~6 broad domains (too coarse),
+        ~20 fine domains (too much overhead). 10 domains balances scale and legibility.
       </p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
         Adopt 10 domains: Platform · Commerce · Relationship · Operations · Content · Intelligence ·
         Automation · Analytics · Finance · Integration. Each domain owns its model, data, rules, API,
-        events, permissions, and lifecycle.
+        events, permissions, and lifecycle. The set is closed — a new ADR is required to add or remove.
       </p>
       <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
         Every business record has a clear home. Cross-domain collaboration goes through events/APIs,
-        never through shared tables.
+        never through shared tables. Platform remains a trust layer, not a super-monolith.
       </p>
     </div>
   </div>
@@ -438,7 +496,16 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <h2 id="madr6-title">ADR 0006: Transactional Outbox / Inbox</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
-        Domains must collaborate through events, never shared tables. Outbox/Inbox guarantees durable event delivery without a heavy message broker at current scale.
+        Domains must collaborate through events, never shared tables. A single paid-order event fans
+        out to seven domains. In-process emit loses events on crash. A broker is premature overhead.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
+        Each emitting domain owns <code>{domain}_outbox</code>, written in the same DB transaction as the
+        state change. Each consuming domain owns <code>{domain}_inbox</code>, keyed by event ID — making
+        consumption idempotent. A real broker can be added later without rewriting either table.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
+        No event is lost on crash. No event is processed twice. No new infrastructure at current scale.
       </p>
     </div>
   </div>
@@ -446,10 +513,19 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
   <div id="modal-adr7" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="madr7-title">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal('modal-adr7')" aria-label="Close">&times;</button>
-      <h2 id="madr7-title">ADR 0007: Platform Module Entitlements</h2>
+      <h2 id="madr7-title">ADR 0007: Platform Owns Module Entitlements</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Status: Accepted · 2026-06-18</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Context</strong><br>
-        Platform is the single source of truth for module entitlements, eliminating duplicated RBAC logic across downstream services.
+        If each module implements its own entitlement check, the logic diverges over time, edge cases
+        are handled inconsistently, and a billing change requires updates across all modules.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Decision</strong><br>
+        Platform is the single source of truth for module entitlements. Any module calls the
+        Platform entitlement service or reads its cache — never maintains its own entitlement state.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Consequence</strong><br>
+        Billing changes propagate automatically. Entitlement logic is tested once, in one place.
+        Modules become simpler — they make a query, not a policy decision.
       </p>
     </div>
   </div>
@@ -460,7 +536,17 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
       <h2 id="mres-title">AI Test Generation & Specification Bias</h2>
       <p style="color:var(--text-muted); margin-bottom:var(--sp-5); font-size:0.875rem;">Undergraduate Thesis · Empirical Study</p>
       <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Research Question</strong><br>
-        Do LLM-generated test suites systematically overfit to the happy path described in a specification?
+        Do LLM-generated test suites systematically overfit to the happy path described in a
+        specification, while consistently failing to cover edge cases and negative test paths?
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--sp-4);"><strong style="color:var(--text-primary);">Methodology</strong><br>
+        LLM prompting with varied temperature and prompt structures → coverage analysis against
+        human-authored test suites → reproducibility testing across multiple sessions.
+      </p>
+      <p style="font-size:0.9rem; color:var(--text-secondary);"><strong style="color:var(--text-primary);">Key Findings</strong><br>
+        Happy-path bias is consistent and measurable. Deterministic sampling (temperature=0) produces
+        reproducible bias — not unbiased output. Specification quality is the dominant variable:
+        ambiguous specs produce the worst AI coverage regardless of model.
       </p>
     </div>
   </div>
@@ -469,7 +555,9 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
     <p>Software Engineering Portfolio &mdash; Business Systems, Architecture & Applied AI</p>
   </footer>
 
+  <!-- Native JS: IntersectionObserver + Modal (< 800 bytes, 0 dependencies) -->
   <script>
+    // Scroll-Driven Reveal
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) {
@@ -481,10 +569,12 @@ $$ <span class="c-keyword">LANGUAGE</span> plpgsql <span class="c-keyword">SECUR
     );
     document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
 
+    // Modal control
     function openModal(id) {
       const modal = document.getElementById(id);
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      modal.querySelector('.modal-content').focus();
     }
 
     function closeModal(id) {
